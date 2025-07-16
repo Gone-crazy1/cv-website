@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ndidi ThankGod - CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background: white;
+            font-size: 11px;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 15mm;
+            background: white;
+            min-height: 297mm;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #2563eb;
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 5px;
+        }
+
+        .title {
+            font-size: 14px;
+            color: #2563eb;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 10px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 18px;
+            page-break-inside: avoid;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 8px;
+            padding-bottom: 3px;
+            border-bottom: 1px solid #e5e7eb;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section-content {
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        /* Professional Summary */
+        .summary-text {
+            text-align: justify;
+            color: #374151;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .skill-category h4 {
+            font-size: 11px;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 4px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .skill-tag {
+            background: #f3f4f6;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 9px;
+            color: #374151;
+            border: 1px solid #d1d5db;
+        }
+
+        /* Project */
+        .project-header {
+            margin-bottom: 8px;
+        }
+
+        .project-title {
+            font-size: 12px;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 3px;
+        }
+
+        .project-meta {
+            font-size: 10px;
+            color: #6b7280;
+            margin-bottom: 5px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 8px;
+        }
+
+        .tech-tag {
+            background: #2563eb;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 9px;
+        }
+
+        .project-achievements {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .project-achievements li {
+            position: relative;
+            padding-left: 12px;
+            margin-bottom: 3px;
+            font-size: 10px;
+            line-height: 1.4;
+        }
+
+        .project-achievements li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        .project-links {
+            margin-top: 8px;
+            font-size: 10px;
+        }
+
+        .project-links a {
+            color: #2563eb;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+
+        /* Interests */
+        .interests-list {
+            list-style: none;
+        }
+
+        .interests-list li {
+            position: relative;
+            padding-left: 12px;
+            margin-bottom: 4px;
+        }
+
+        .interests-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        /* Info Grid */
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            position: relative;
+            padding-left: 12px;
+            margin-bottom: 4px;
+        }
+
+        .info-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        /* Education */
+        .education-item h4 {
+            font-size: 11px;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 3px;
+        }
+
+        .education-item p {
+            font-size: 10px;
+            color: #6b7280;
+            font-style: italic;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .cv-container {
+                margin: 0;
+                padding: 10mm;
+                max-width: none;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+                margin-bottom: 15px;
+            }
+            
+            .skill-tag, .tech-tag {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        /* Two Column Layout for larger sections */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="name">Ndidi ThankGod</h1>
+            <p class="title">Backend & AI Automation Developer</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📍 Ibadan, Nigeria</span>
+                </div>
+                <div class="contact-item">
+                    <span>📧 hello@oluwaseun.dev</span>
+                </div>
+                <div class="contact-item">
+                    <span>📞 +234 810 496 5538</span>
+                </div>
+                <div class="contact-item">
+                    <span>🌐 oluwaseun.dev</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Professional Summary -->
+        <section class="section">
+            <h2 class="section-title">Professional Summary</h2>
+            <div class="section-content">
+                <p class="summary-text">
+                    Self-taught backend and AI automation developer with real-world experience building a fully functional financial assistant bot (Sofi AI). Proficient in Python, Flask, Supabase, and integrating modern AI like OpenAI Assistants. Demonstrated ability to design, build, secure, and deploy backend systems and AI-driven workflows from scratch, with strong focus on performance, reliability, and automation.
+                </p>
+            </div>
+        </section>
+
+        <!-- Core Skills -->
+        <section class="section">
+            <h2 class="section-title">Core Skills</h2>
+            <div class="section-content">
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Languages</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Frameworks</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">Flask</span>
+                            <span class="skill-tag">FastAPI</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Databases</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">Supabase (PostgreSQL)</span>
+                            <span class="skill-tag">Firebase</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>DevOps & Tools</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Render</span>
+                            <span class="skill-tag">GitHub Actions</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>AI & Automation</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">OpenAI Assistants</span>
+                            <span class="skill-tag">Prompt Engineering</span>
+                            <span class="skill-tag">Langchain</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>APIs & Integration</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">Paystack</span>
+                            <span class="skill-tag">Monnify</span>
+                            <span class="skill-tag">9Psb</span>
+                            <span class="skill-tag">Crypto APIs</span>
+                            <span class="skill-tag">Telegram Bot API</span>
+                            <span class="skill-tag">REST APIs</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Security</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">Rate Limiting</span>
+                            <span class="skill-tag">IP Bans</span>
+                            <span class="skill-tag">Webhooks</span>
+                            <span class="skill-tag">Honeypots</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Project -->
+        <section class="section">
+            <h2 class="section-title">Featured Project</h2>
+            <div class="section-content">
+                <div class="project-header">
+                    <h3 class="project-title">💼 Sofi AI – AI Financial Assistant</h3>
+                    <div class="project-meta">
+                        <strong>Role:</strong> Founder & Full-Stack Developer | <strong>Timeline:</strong> 2024 – Present
+                    </div>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Flask</span>
+                    <span class="tech-tag">Supabase</span>
+                    <span class="tech-tag">Paystack</span>
+                    <span class="tech-tag">OpenAI Assistants</span>
+                </div>
+                <ul class="project-achievements">
+                    <li>Developed a full-featured Telegram-based financial assistant handling transfers, deposits, balance checks, and wallet statements</li>
+                    <li>Built a secure voice note and web-based PIN verification system using Flask</li>
+                    <li>Integrated OpenAI Assistants for intelligent chat + tool calling</li>
+                    <li>Designed backend functions to fetch wallet data, verify accounts, send money, and generate transaction receipts</li>
+                    <li>Created custom IP-based bot protection and rate limiting system for production security</li>
+                    <li>Deployed live system on Render with database and file storage on Supabase</li>
+                    <li>Architected the backend to support real-time webhook events, multi-user context handling, and OpenAI thread state management</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://t.me/getsofi_bot">🔗 Telegram: @getsofi_bot</a>
+                    <a href="https://twitter.com/getsofi_bot">🔗 Twitter: @getsofi_bot</a>
+                    <a href="https://pipinstallsofi.com">🔗 Website: pipinstallsofi.com</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="two-column">
+            <!-- Education -->
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="section-content">
+                    <div class="education-item">
+                        <h4>Professional Developer</h4>
+                        <p>Built Sofi AI project from scratch while learning through documentation, real-world APIs, and hands-on debugging. No bootcamps, just grit and hard work.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Professional Interests -->
+            <section class="section">
+                <h2 class="section-title">Professional Interests</h2>
+                <div class="section-content">
+                    <ul class="interests-list">
+                        <li>Remote backend roles (Python / Flask / APIs / Supabase)</li>
+                        <li>AI automation roles using OpenAI tools or Langchain</li>
+                        <li>Contributing to dev teams or solo delivering backend automation systems</li>
+                        <li>Learning new technologies on the job</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <!-- Additional Information -->
+        <section class="section">
+            <h2 class="section-title">Additional Information</h2>
+            <div class="section-content">
+                <ul class="info-list">
+                    <li>Available for full-time or part-time remote roles</li>
+                    <li>Will create separate GitHub for professional use if needed</li>
+                    <li>Portfolio project: Sofi AI (live on Telegram with backend features)</li>
+                    <li>Self-motivated with strong problem-solving skills and entrepreneurial mindset</li>
+                    <li>Experience with production-level security, performance optimization, and real-time systems</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
