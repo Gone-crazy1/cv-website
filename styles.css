@@ -73,6 +73,7 @@ body {
 .profile-section {
     display: flex;
     align-items: center;
+    justify-content: center; /* Center when no image */
     gap: 2rem;
 }
 
@@ -103,6 +104,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-align: center; /* Center name when no image */
 }
 
 .title {
@@ -110,6 +112,7 @@ body {
     font-weight: 500;
     margin-bottom: 1.5rem;
     opacity: 0.95;
+    text-align: center; /* Center title when no image */
 }
 
 .contact-info {
@@ -632,8 +635,8 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    background: white;
-    color: var(--primary-color);
+    background: #1f2937;
+    color: white;
     padding: 1rem 2rem;
     border-radius: 12px;
     text-decoration: none;
@@ -643,6 +646,7 @@ body {
     box-shadow: var(--shadow-lg);
     position: relative;
     overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .download-btn::before {
@@ -659,7 +663,8 @@ body {
 .download-btn:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-xl);
-    background: #f8fafc;
+    background: #374151;
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .download-btn:hover::before {
@@ -687,12 +692,14 @@ body {
 }
 
 .dark-theme .download-btn {
-    background: var(--text-primary);
-    color: white;
+    background: #f8fafc;
+    color: #1f2937;
+    border-color: rgba(0, 0, 0, 0.1);
 }
 
 .dark-theme .download-btn:hover {
-    background: #374151;
+    background: #e2e8f0;
+    border-color: rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive Design */

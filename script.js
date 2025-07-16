@@ -182,7 +182,8 @@ function initPrintButton() {
     });
     
     printButton.addEventListener('click', function() {
-        window.print();
+        // Open PDF version in new tab instead of printing the website
+        window.open('cv-pdf.html', '_blank');
     });
     
     document.body.appendChild(printButton);
