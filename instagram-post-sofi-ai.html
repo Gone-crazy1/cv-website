@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sofi AI Instagram Post</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .instagram-post {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .post-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: white;
+            z-index: 2;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .tagline {
+            font-size: 24px;
+            font-weight: 300;
+            color: #e8f4ff;
+            margin-bottom: 40px;
+        }
+
+        .main-message {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .main-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .highlight {
+            color: #ffd93d;
+            text-shadow: 0 2px 4px rgba(255, 217, 61, 0.3);
+        }
+
+        .description {
+            font-size: 20px;
+            line-height: 1.5;
+            color: #b8d4f0;
+            margin-bottom: 40px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #ffd93d;
+        }
+
+        .feature-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .feature-desc {
+            font-size: 14px;
+            color: #b8d4f0;
+        }
+
+        .cta {
+            text-align: center;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+            color: white;
+            padding: 20px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+            margin-bottom: 20px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .contact-info {
+            font-size: 16px;
+            color: #b8d4f0;
+        }
+
+        .decorative-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .circle-1 {
+            width: 200px;
+            height: 200px;
+            top: -100px;
+            right: -100px;
+        }
+
+        .circle-2 {
+            width: 150px;
+            height: 150px;
+            bottom: -75px;
+            left: -75px;
+        }
+
+        .circle-3 {
+            width: 100px;
+            height: 100px;
+            top: 50%;
+            left: 50px;
+            background: rgba(255, 217, 61, 0.1);
+        }
+
+        @media screen and (max-width: 1200px) {
+            .instagram-post {
+                width: 540px;
+                height: 540px;
+            }
+            
+            .post-content {
+                padding: 40px 30px;
+            }
+            
+            .logo {
+                font-size: 32px;
+            }
+            
+            .tagline {
+                font-size: 16px;
+            }
+            
+            .main-title {
+                font-size: 28px;
+            }
+            
+            .description {
+                font-size: 14px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .feature {
+                padding: 20px;
+            }
+            
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="instagram-post">
+        <div class="decorative-elements">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="circle circle-3"></div>
+        </div>
+        
+        <div class="post-content">
+            <div class="header">
+                <div class="logo">SOFI AI</div>
+                <div class="tagline">Your Smart Financial Guardian</div>
+            </div>
+            
+            <div class="main-message">
+                <div class="main-title">
+                    Protect Your Money from <span class="highlight">Scams & Fraud</span>
+                </div>
+                <div class="description">
+                    Don't let scammers steal your hard-earned money. Sofi AI analyzes transactions, detects suspicious activities, and alerts you before you fall victim to fraud.
+                </div>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🛡️</div>
+                    <div class="feature-title">Fraud Detection</div>
+                    <div class="feature-desc">Real-time analysis of suspicious transactions</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💡</div>
+                    <div class="feature-title">Smart Alerts</div>
+                    <div class="feature-desc">Instant warnings for potential scams</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <div class="feature-title">Spending Insights</div>
+                    <div class="feature-desc">Track and optimize your expenses</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <div class="feature-title">Secure Banking</div>
+                    <div class="feature-desc">AI-powered financial security</div>
+                </div>
+            </div>
+            
+            <div class="cta">
+                <div class="cta-button">Get Protected Today</div>
+                <div class="contact-info">
+                    Built by Ndidi ThankGod | Backend & AI Developer<br>
+                    #SofiAI #FinTech #FraudPrevention #AIProtection
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

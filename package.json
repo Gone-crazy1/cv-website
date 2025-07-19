@@ -1,0 +1,35 @@
+{
+  "name": "sofi-ai-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Sofi AI Assistant - Ndidi ThankGod's CV AI helper",
+  "main": "ai-backend.js",
+  "scripts": {
+    "start": "node ai-backend.js",
+    "dev": "nodemon ai-backend.js",
+    "deploy": "git add . && git commit -m 'Deploy AI backend' && git push"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "node-fetch": "^2.6.7",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "ai",
+    "chatbot",
+    "gpt",
+    "openai",
+    "cv",
+    "assistant",
+    "sofi",
+    "backend"
+  ],
+  "author": "Ndidi ThankGod",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
